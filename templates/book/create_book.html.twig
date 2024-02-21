@@ -23,6 +23,8 @@
 	{{ form_label(form.price, "Price") }}
 	{{ form_widget(form.price) }}
 
+	<button type="submit">Add</button>
+
 	<section class="error">
 		{{ form_errors(form.ISBN) }}
 		{{ form_errors(form.title) }}
@@ -30,7 +32,6 @@
 		{{ form_errors(form.description) }}
 		{{ form_errors(form.price) }}
 	</section>
-	<button type="submit">Add</button>
 
 	{{ form_end(form) }}
 
