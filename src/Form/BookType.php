@@ -21,7 +21,10 @@ class BookType extends AbstractType
         $builder
             ->add('ISBN', TextType::class, [
                 "constraints" => [
-                    new Length(13)
+                    new Length(
+                        13,
+                        exactMessage: "ISBN must be exactly {{ limit }} caracters"
+                    )
                 ]
             ])
             ->add('title', TextType::class, [])
