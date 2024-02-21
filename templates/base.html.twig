@@ -13,10 +13,10 @@
 		<header>
 			<nav>
 				<a href="{{ path("app_home") }}">View All Books</a>
-				<a href="">Add book</a>
+				<a href="{{ path("create_book") }}">Add book</a>
 			</nav>
-			<form action="">
-				<input type="text" name="searchId" placeholder="Book ID"/>
+			<form action="{{ path("search_bookTitle", {"title": "searchTitle"}) }}" method="post">
+				<input type="text" name="searchTitle" placeholder="Title"/>
 				<button type="submit">Search</button>
 			</form>
 		</header>
