@@ -7,11 +7,12 @@
 {% block main %}
 
 	<h2>
-		{{searchTitle}}
+		{{ searchTitle }}
 	</h2>
 
 	{% for book in results %}
 		{{ book | nl2br }}
+		<hr>
 	{% endfor %}
 
 
