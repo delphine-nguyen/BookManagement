@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="{{ asset("css/theme.css") }}"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		<link rel="stylesheet" href="{{ asset("css/theme.css")}}"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
 		<title>
 			{% block title %}
 				book management
@@ -15,8 +15,9 @@
 				<a href="{{ path("app_home") }}">View All Books</a>
 				<a href="{{ path("create_book") }}">Add book</a>
 			</nav>
-			<form action="{{ path("search_bookTitle", {"title": "searchTitle"}) }}" method="post">
-				<input type="text" name="searchTitle" placeholder="Title"/>
+
+			<form action="{{ path("search_bookTitle", {"title": "searchTitle"}) }}" method="get">
+				<input type="text" name="searchTitle" id="searchTitle" placeholder="Title"/>
 				<button type="submit">Search</button>
 			</form>
 		</header>

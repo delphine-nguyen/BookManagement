@@ -2,3 +2,8 @@
 	color: red;
 	background-color: black;
 }
+
+label,
+input {
+	display: block;
+}
