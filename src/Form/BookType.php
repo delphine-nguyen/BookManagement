@@ -3,12 +3,14 @@
 namespace App\Form;
 
 use App\Entity\Book;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\EqualTo;
+
 use Symfony\Component\Validator\Constraints\GreaterThan;
 use Symfony\Component\Validator\Constraints\Length;
 
@@ -19,10 +21,7 @@ class BookType extends AbstractType
         $builder
             ->add('ISBN', TextType::class, [
                 "constraints" => [
-                    new EqualTo([
-                        "value" => 13,
-                        "message" => "ISBN must be exactly {{ compared_value }} caracter-long"
-                    ])
+                    new Length(13)
                 ]
             ])
             ->add('title', TextType::class, [])
