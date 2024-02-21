@@ -2,7 +2,7 @@
 
 ## Entities
 
-- [ ] Book
+- [x] Book
   - ISBN (string)
   - Titre
   - Résumé
