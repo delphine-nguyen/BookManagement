@@ -6,10 +6,12 @@
 
 {% block main %}
 
-	{% for book in books %}
-		{{ book | nl2br}}
-		<hr>
-	{% endfor %}
-
-
+	<ul>
+		{% for book in books %}
+			<li>
+				{{ book.title}}
+				<a href="{{ path("search_bookId", {"id": book.id}) }}">(See details)</a>
+			</li>
+		{% endfor %}
+	</ul>
 {% endblock %}

@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class BookController extends AbstractController
 {
-    #[Route('/book/{id}', name: 'app_book')]
+    #[Route('/book/{id}', name: 'search_bookId')]
     public function bookById(BookRepository $bookRepository, int $id): Response
     {
         $book = $bookRepository->find($id);
