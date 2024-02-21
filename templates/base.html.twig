@@ -16,7 +16,7 @@
 				<a href="{{ path("create_book") }}">Add book</a>
 			</nav>
 
-			<form action="{{ path("search_bookTitle", {"title": "searchTitle"}) }}" method="get">
+			<form action="{{ path("search_bookTitle", {"title": "searchTitle"}) }}" class="searchBar" method="get">
 				<input type="text" name="searchTitle" id="searchTitle" placeholder="Title"/>
 				<button type="submit">Search</button>
 			</form>
