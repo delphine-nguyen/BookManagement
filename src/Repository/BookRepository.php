@@ -26,7 +26,6 @@ class BookRepository extends ServiceEntityRepository
      */
     public function findByTitle(string $title): array
     {
-        var_dump($title);
         return $this->createQueryBuilder('book')
             ->andWhere('book.title LIKE :title')
             ->setParameter('title', "%$title%")

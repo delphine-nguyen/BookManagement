@@ -26,6 +26,7 @@ class BookController extends AbstractController
     #[Route('/book/title/{title}', name: 'search_bookTitle')]
     public function bookByTitle(BookRepository $bookRepository, string $title): Response
     {
+        $title = $_GET[$title];
         $books = $bookRepository->findByTitle($title);
         return $this->render('book/search_bookTitle.html.twig', [
             "results" => $books,
