@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Home
+{% endblock %}
+
+{% block main %}
+
+	{% for book in books %}
+		{{ book | nl2br}}
+		<hr>
+	{% endfor %}
+
+
+{% endblock %}

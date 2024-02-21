@@ -2,18 +2,19 @@
 
 namespace App\Controller;
 
+use App\Repository\BookRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class BookController extends AbstractController
 {
     #[Route('/book/{id}', name: 'app_book')]
-    public function bookById(int $id): JsonResponse
+    public function bookById(BookRepository $bookRepository, int $id): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/BookController.php',
+        $book = $bookRepository->find($id);
+        return $this->render('book/search_bookId.html.twig', [
+            "result" => $book,
         ]);
     }
 }

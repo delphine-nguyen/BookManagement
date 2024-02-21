@@ -93,4 +93,14 @@ class Book
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return "ID: " . $this->getId() . "\n" .
+            "Title: " . $this->getTitle() . "\n" .
+            "ISBN: " . $this->getISBN() . "\n" .
+            "Summary: " . $this->getSummary() . "\n" .
+            "Description: " . $this->getDescription() . "\n" .
+            "Price: " . $this->getPrice();
+    }
 }

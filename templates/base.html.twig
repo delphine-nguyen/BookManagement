@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="{{ asset("css/theme.css") }}"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		<title>
+			{% block title %}
+				book management
+			{% endblock %}
+		</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="{{ path("app_home") }}">View All Books</a>
+				<a href="">Add book</a>
+			</nav>
+			<form action="">
+				<input type="text" name="searchId" placeholder="Book ID"/>
+				<button type="submit">Search</button>
+			</form>
+		</header>
+		{% block main %}{% endblock %}
+	</body>
+</html>
