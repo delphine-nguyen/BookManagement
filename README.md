@@ -12,9 +12,10 @@
 
 ## Pages
 
-- [ ] Home
-- [ ] Form to create book
-  - Error messages displayed in red
-- [ ] Info about specific book
-  
-With navigation bar on all pages
+- [x] Home
+  - [x] Link to delete book from DB
+- [x] Form to create book
+    - [x] Error messages displayed in red
+    - [x] Add constraints on fields
+- [x] Info about specific book
+- [x] Nav bar on all pages
