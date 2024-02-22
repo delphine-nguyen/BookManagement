@@ -4,17 +4,11 @@
 	Home
 {% endblock %}
 
-{% block main %}
+{% block body %}
 
 	<ul>
-		{% for book in books %}
-			<li>
-				{{ book.title}}
-				(<a href="{{ path("search_bookId", {"id": book.id}) }}">See</a>
-				|
-				<a href="{{ path("app_book_delete", {"id": book.id}) }}">Delete</a>
-				)
-			</li>
-		{% endfor %}
+		<a href="{{ path("app_book_index") }}">Books</a>
+		<a href="{{ path("app_editor_index") }}">Editors</a>
+		<a href="{{ path("app_author_index") }}">Authors</a>
 	</ul>
 {% endblock %}
