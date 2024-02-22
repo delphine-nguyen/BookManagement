@@ -20,6 +20,16 @@
 				<th>Address</th>
 				<td>{{ editor.address }}</td>
 			</tr>
+			<tr>
+				<th>Books</th>
+				<td>
+					<ul>
+						{% for book in books %}
+							<li>{{ book.title}}</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 

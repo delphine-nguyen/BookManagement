@@ -45,8 +45,10 @@ class EditorController extends AbstractController
     #[Route('/{id}', name: 'app_editor_show', methods: ['GET'])]
     public function show(Editor $editor): Response
     {
+        $books = $editor->getBooks();
         return $this->render('editor/show.html.twig', [
             'editor' => $editor,
+            "books" => $books,
         ]);
     }
 
@@ -71,7 +73,7 @@ class EditorController extends AbstractController
     #[Route('/{id}', name: 'app_editor_delete', methods: ['POST'])]
     public function delete(Request $request, Editor $editor, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$editor->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $editor->getId(), $request->request->get('_token'))) {
             $entityManager->remove($editor);
             $entityManager->flush();
         }

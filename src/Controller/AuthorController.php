@@ -45,8 +45,10 @@ class AuthorController extends AbstractController
     #[Route('/{id}', name: 'app_author_show', methods: ['GET'])]
     public function show(Author $author): Response
     {
+        $books = $author->getBooks();
         return $this->render('author/show.html.twig', [
             'author' => $author,
+            "books" => $books
         ]);
     }
 
@@ -71,7 +73,7 @@ class AuthorController extends AbstractController
     #[Route('/{id}', name: 'app_author_delete', methods: ['POST'])]
     public function delete(Request $request, Author $author, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$author->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $author->getId(), $request->request->get('_token'))) {
             $entityManager->remove($author);
             $entityManager->flush();
         }
