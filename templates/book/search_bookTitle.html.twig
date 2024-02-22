@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ searchTitle }}
+{% endblock %}
+
+{% block body %}
+
+	<h2>
+		{{ searchTitle }}
+	</h2>
+
+	{% for book in results %}
+		{{ book | nl2br }}
+		<hr>
+	{% endfor %}
+
+
+{% endblock %}

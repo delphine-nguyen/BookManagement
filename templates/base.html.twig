@@ -12,8 +12,9 @@
 	<body>
 		<header>
 			<nav>
-				<a href="{{ path("app_home") }}">View All Books</a>
-				<a href="{{ path("app_book_new") }}">Add book</a>
+				<a href="{{ path("app_book_index") }}">Books</a>
+				<a href="{{ path("app_editor_index") }}">Editors</a>
+				<a href="{{ path("app_author_index") }}">Authors</a>
 			</nav>
 
 			<form action="{{ path("search_bookTitle", {"title": "searchTitle"}) }}" class="searchBar" method="get">
