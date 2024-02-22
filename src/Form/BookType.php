@@ -2,9 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Author;
 use App\Entity\Book;
-
+use App\Entity\Editor;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -55,7 +58,15 @@ class BookType extends AbstractType
                         ])
                     ]
                 ]
-            );
+            )
+            ->add('author', EntityType::class, [
+                'class' => Author::class,
+                'choice_label' => 'name',
+            ])
+            ->add('editor', EntityType::class, [
+                'class' => Editor::class,
+                'choice_label' => 'name',
+            ]);;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
