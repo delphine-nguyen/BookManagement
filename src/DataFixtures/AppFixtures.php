@@ -3,7 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Book;
-
+use App\Entity\Editor;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -12,6 +12,16 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = \Faker\Factory::create("fr_FR");
+
+        $editors = [];
+        for ($i = 0; $i < 10; $i++) {
+            $editor = new Editor();
+            $editor->setName($faker->company());
+            $editor->setAddress($faker->address());
+            $manager->persist($editor);
+            $editors[] = $editor;
+        }
+
 
         for ($i = 0; $i < 20; $i++) {
             $book = new Book();
@@ -27,6 +37,8 @@ class AppFixtures extends Fixture
             $book->setDescription($description);
             $book->setISBN($isbn);
             $book->setPrice($price);
+
+            $book->setEditor($faker->randomElement($editors));
 
             $manager->persist($book);
         }

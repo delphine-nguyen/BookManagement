@@ -103,6 +103,7 @@ class Book
         return "ID: " . $this->getId() . "\n" .
             "Title: " . $this->getTitle() . "\n" .
             "ISBN: " . $this->getISBN() . "\n" .
+            "Editor: " . $this->getEditor()->getName() . "\n" .
             "Summary: " . $this->getSummary() . "\n" .
             "Description: " . $this->getDescription() . "\n" .
             "Price: " . $this->getPrice();
