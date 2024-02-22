@@ -13,7 +13,7 @@
 		<header>
 			<nav>
 				<a href="{{ path("app_home") }}">View All Books</a>
-				<a href="{{ path("create_book") }}">Add book</a>
+				<a href="{{ path("app_book_new") }}">Add book</a>
 			</nav>
 
 			<form action="{{ path("search_bookTitle", {"title": "searchTitle"}) }}" class="searchBar" method="get">
@@ -21,6 +21,6 @@
 				<button type="submit">Search</button>
 			</form>
 		</header>
-		{% block main %}{% endblock %}
+		{% block body %}{% endblock %}
 	</body>
 </html>
