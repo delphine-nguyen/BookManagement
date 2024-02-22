@@ -12,6 +12,7 @@
 				<th>Id</th>
 				<th>ISBN</th>
 				<th>Title</th>
+				<th>Author</th>
 				<th>Editor</th>
 				<th>Summary</th>
 				<th>Description</th>
@@ -25,6 +26,7 @@
 					<td>{{ book.id }}</td>
 					<td>{{ book.ISBN }}</td>
 					<td>{{ book.title }}</td>
+					<td>{{ book.author.name }}</td>
 					<td>{{ book.editor.name }}</td>
 					<td>{{ book.summary }}</td>
 					<td>{{ book.description }}</td>
