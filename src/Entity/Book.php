@@ -29,6 +29,10 @@ class Book
     #[ORM\Column]
     private ?float $price = null;
 
+    #[ORM\ManyToOne(inversedBy: 'books')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Editor $editor = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,5 +106,17 @@ class Book
             "Summary: " . $this->getSummary() . "\n" .
             "Description: " . $this->getDescription() . "\n" .
             "Price: " . $this->getPrice();
+    }
+
+    public function getEditor(): ?Editor
+    {
+        return $this->editor;
+    }
+
+    public function setEditor(?Editor $editor): static
+    {
+        $this->editor = $editor;
+
+        return $this;
     }
 }
